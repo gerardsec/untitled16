@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <VBox prefHeight="511.0" prefWidth="667.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Datos">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Aspirantes" />
+                        <MenuItem mnemonicParsing="false" text="Lectura 1" />
+                        <MenuItem mnemonicParsing="false" text="Lectura 2" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="454.0" prefWidth="667.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="numCasos" layoutX="14.0" layoutY="42.0" promptText="Número de casos" />
+                        <Button layoutX="39.0" layoutY="119.0" mnemonicParsing="false" onAction="#recibirNumero" text="Enviar" />
+                     </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="463.0">
+                     <children>
+                        <TableView fx:id="personaTableView" layoutX="32.0" layoutY="26.0" prefHeight="225.0" prefWidth="328.0">
+                          <columns>
+                            <TableColumn fx:id="claveTC" prefWidth="75.0" text="Clave" />
+                            <TableColumn fx:id="nombreTC" prefWidth="75.0" text="Nombre" />
+                              <TableColumn fx:id="edadTC" prefWidth="75.0" text="Edad" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+            <HBox prefHeight="27.0" prefWidth="667.0" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>
