@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="511.0" prefWidth="866.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -51,27 +51,28 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <SplitPane dividerPositions="0.29797979797979796" prefHeight="454.0" prefWidth="667.0">
+            <SplitPane dividerPositions="0.21503759398496242" prefHeight="454.0" prefWidth="738.0">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="452.0" prefWidth="131.0">
                      <children>
-                        <TextField fx:id="numCasos" layoutX="14.0" layoutY="42.0" promptText="Número de casos" />
+                        <TextField fx:id="numCasos" layoutX="14.0" layoutY="42.0" prefHeight="27.0" prefWidth="88.0" promptText="Número de casos" />
                         <Button layoutX="39.0" layoutY="119.0" mnemonicParsing="false" onAction="#recibirNumero" text="Enviar" />
                      </children></AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="463.0">
                      <children>
-                        <TableView fx:id="personaTableView" editable="true" layoutX="32.0" layoutY="26.0" onMouseClicked="#clickOnTable" prefHeight="225.0" prefWidth="328.0">
+                        <TableView fx:id="personaTableView" editable="true" layoutX="14.0" layoutY="23.0" onMouseClicked="#clickOnTable" prefHeight="225.0" prefWidth="489.0" tableMenuButtonVisible="true">
                           <columns>
                             <TableColumn fx:id="clave" prefWidth="75.0" text="Clave" />
-                            <TableColumn fx:id="nombre" prefWidth="75.0" text="Nombre" />
+                            <TableColumn fx:id="nombre" onEditCommit="#editNombre" prefWidth="75.0" text="Nombre" />
                               <TableColumn fx:id="edad" prefWidth="75.0" text="Edad" />
                               <TableColumn fx:id="nacimiento" prefWidth="75.0" text="Nacimiento" />
                           </columns>
                         </TableView>
+                        <TextField fx:id="nombreActual" layoutX="44.0" layoutY="275.0" />
                      </children></AnchorPane>
               </items>
             </SplitPane>
-            <HBox prefHeight="27.0" prefWidth="667.0" />
+            <HBox prefHeight="24.0" prefWidth="714.0" />
          </children>
       </VBox>
    </children>
