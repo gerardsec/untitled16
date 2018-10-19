@@ -1,41 +1,75 @@
 package sample.model;
 
+import javafx.beans.property.*;
+
+import java.time.LocalDate;
+
 public class Persona {
-  private Integer clave;
-  private String nombre;
-  private Integer edad;
+  private IntegerProperty clave;
+  private StringProperty nombre;
+  private IntegerProperty edad;
+  private ObjectProperty<LocalDate> nacimiento;
 
-  public Persona(){}
-
-  public Persona(Integer clave, String nombre, Integer edad){
-    this.clave=clave;
-    this.nombre=nombre;
-    this.edad=edad;
+  public Persona(Integer clave, String nombre, Integer edad, LocalDate nacimiento) {
+    claveProperty().set(clave);
+    nombreProperty().set(nombre);
+    edadProperty().set(edad);
+    nacimientoProperty().set(nacimiento);
   }
 
-  public Integer getClave() {
+
+  public IntegerProperty claveProperty() {
+    if (clave == null) clave = new SimpleIntegerProperty(this, "clave");
     return clave;
   }
 
-  public void setClave(Integer clave) {
-    this.clave = clave;
+  public Integer getClave() {
+    return claveProperty().get();
   }
 
-  public String getNombre() {
+  public void setClave(Integer clave) {
+    claveProperty().set(clave);
+  }
+
+  public StringProperty nombreProperty() {
+    if (nombre == null) nombre = new SimpleStringProperty(this, "nombre");
     return nombre;
   }
 
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
+  public String getNombre() {
+    return nombreProperty().get();
   }
 
-  public Integer getEdad() {
+  public void setNombre(String nombre) {
+    this.nombreProperty().set(nombre);
+  }
+
+  public IntegerProperty edadProperty() {
+    if (edad == null) edad = new SimpleIntegerProperty(this, "edad");
     return edad;
   }
 
+  public Integer getEdad() {
+    return edadProperty().get();
+  }
+
   public void setEdad(Integer edad) {
-    this.edad = edad;
+    edadProperty().set(edad);
+  }
+
+  public ObjectProperty<LocalDate> nacimientoProperty(){
+    if(nacimiento==null) nacimiento=new SimpleObjectProperty<LocalDate>(this,"nacimiento");
+    return nacimiento;
+  }
+
+  public LocalDate getNacimiento(){
+    return nacimientoProperty().get();
+  }
+
+  public void setNacimiento(LocalDate nacimiento) {
+    nacimientoProperty().set(nacimiento);
   }
 
 
 }
+

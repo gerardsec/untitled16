@@ -60,11 +60,12 @@
                      </children></AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="463.0">
                      <children>
-                        <TableView fx:id="personaTableView" layoutX="32.0" layoutY="26.0" prefHeight="225.0" prefWidth="328.0">
+                        <TableView fx:id="personaTableView" editable="true" layoutX="32.0" layoutY="26.0" onMouseClicked="#clickOnTable" prefHeight="225.0" prefWidth="328.0">
                           <columns>
-                            <TableColumn fx:id="claveTC" prefWidth="75.0" text="Clave" />
-                            <TableColumn fx:id="nombreTC" prefWidth="75.0" text="Nombre" />
-                              <TableColumn fx:id="edadTC" prefWidth="75.0" text="Edad" />
+                            <TableColumn fx:id="clave" prefWidth="75.0" text="Clave" />
+                            <TableColumn fx:id="nombre" prefWidth="75.0" text="Nombre" />
+                              <TableColumn fx:id="edad" prefWidth="75.0" text="Edad" />
+                              <TableColumn fx:id="nacimiento" prefWidth="75.0" text="Nacimiento" />
                           </columns>
                         </TableView>
                      </children></AnchorPane>
