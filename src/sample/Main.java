@@ -11,11 +11,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("califica.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/califica.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
-        sample.Controller.generaPersonas();
+        //sample.controller.Controller.generaPersonas();
     }
 
 
